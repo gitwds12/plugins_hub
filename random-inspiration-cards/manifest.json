@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Word Spark Cards",
+  "description": "A gentle word reminder that pops up five random English words at your chosen interval.",
+  "version": "0.1.0",
+  "action": {
+    "default_title": "Word Spark Cards",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "permissions": ["alarms", "scripting", "storage", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "css": ["word-card.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

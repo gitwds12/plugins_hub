@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Web Sticky Notes",
+  "description": "Add draggable sticky notes to any web page and keep them there for next time.",
+  "version": "0.1.0",
+  "action": {
+    "default_title": "Add a sticky note"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["scripting", "storage", "tabs"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "css": ["sticky.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

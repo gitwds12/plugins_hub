@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Word Spark Cards</title>
+    <link rel="stylesheet" href="settings.css">
+  </head>
+  <body class="popup">
+    <main class="panel">
+      <header>
+        <p>Word Spark</p>
+        <h1>Word reminder</h1>
+      </header>
+
+      <label class="toggle-row">
+        <span>Reminders</span>
+        <input id="enabled" type="checkbox">
+      </label>
+
+      <label class="field">
+        <span>Interval minutes</span>
+        <input id="intervalMinutes" type="number" min="1" max="180" step="1">
+      </label>
+
+      <div class="actions">
+        <button id="saveButton" class="primary" type="button">Save</button>
+        <button id="showNowButton" class="secondary" type="button">Show now</button>
+      </div>
+
+      <p class="status" id="status"></p>
+    </main>
+
+    <script src="settings.js"></script>
+  </body>
+</html>
