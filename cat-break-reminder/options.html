@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>休息猫设置</title>
+    <link rel="stylesheet" href="ui.css">
+  </head>
+  <body>
+    <main class="options-shell">
+      <section class="hero-card">
+        <div class="big-cat" aria-hidden="true"></div>
+        <div>
+          <p class="eyebrow">Cat Break Reminder</p>
+          <h1>让一只猫负责把你从屏幕里捞出来</h1>
+          <p class="lede">设置提醒节奏、稍后提醒时间和勿扰时段。所有配置都只保存在浏览器本地同步存储里。</p>
+        </div>
+      </section>
+
+      <form id="settingsForm" class="settings-card">
+        <label class="toggle-row options-toggle">
+          <span>启用休息提醒</span>
+          <input id="enabled" type="checkbox">
+        </label>
+
+        <label class="field">
+          <span>每隔多少分钟提醒一次</span>
+          <input id="intervalMinutes" type="number" min="1" max="240" step="1">
+        </label>
+
+        <label class="field">
+          <span>点击“稍后提醒”后等待几分钟</span>
+          <input id="snoozeMinutes" type="number" min="1" max="120" step="1">
+        </label>
+
+        <label class="toggle-row options-toggle">
+          <span>启用勿扰时段</span>
+          <input id="quietHoursEnabled" type="checkbox">
+        </label>
+
+        <div class="time-grid">
+          <label class="field">
+            <span>勿扰开始</span>
+            <input id="quietStart" type="time">
+          </label>
+          <label class="field">
+            <span>勿扰结束</span>
+            <input id="quietEnd" type="time">
+          </label>
+        </div>
+
+        <button class="save-button" type="submit">保存设置</button>
+        <p id="status" class="status" role="status"></p>
+      </form>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>

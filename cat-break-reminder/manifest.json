@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Cat Break Reminder",
+  "description": "A tiny cat pops up every so often to remind you to rest your eyes, stretch, and drink water.",
+  "version": "0.1.0",
+  "action": {
+    "default_title": "Cat Break Reminder",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "permissions": ["alarms", "scripting", "storage", "tabs"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "css": ["cat.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

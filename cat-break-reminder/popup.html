@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cat Break Reminder</title>
+    <link rel="stylesheet" href="ui.css">
+  </head>
+  <body class="popup-body">
+    <main class="popup-shell">
+      <div class="brand-row">
+        <div class="mini-cat" aria-hidden="true"></div>
+        <div>
+          <h1>休息猫</h1>
+          <p>猫猫会提醒你从屏幕前短暂撤退。</p>
+        </div>
+      </div>
+
+      <label class="toggle-row">
+        <span>启用提醒</span>
+        <input id="enabled" type="checkbox">
+      </label>
+
+      <div class="quick-grid">
+        <button id="showNow" type="button">现在叫猫</button>
+        <button id="openOptions" type="button">设置</button>
+      </div>
+
+      <p id="status" class="status" role="status"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
